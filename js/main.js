@@ -29,18 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
       let response;
 
       if (
-        userMessage.toLowerCase().includes("hola") ||
-        userMessage.toLowerCase().includes("saludos")
+        userMessage.toLowerCase().includes("hello") ||
+        userMessage.toLowerCase().includes("hi")
       ) {
-        response = "¡Hola! ¿En qué puedo ayudarte hoy?";
-      } else if (userMessage.toLowerCase().includes("gracias")) {
-        response = "¡De nada! Estoy aquí para ayudar.";
-      } else if (userMessage.toLowerCase().includes("ayuda")) {
+        response = "Hello! How can I help you find the right contractor today?";
+      } else if (
+        userMessage.toLowerCase().includes("thanks") ||
+        userMessage.toLowerCase().includes("thank you")
+      ) {
+        response = "You're welcome! I'm here to help.";
+      } else if (userMessage.toLowerCase().includes("help")) {
         response =
-          "Estoy aquí para responder tus preguntas y asistirte con información. ¿Sobre qué tema necesitas ayuda?";
+          "I'm here to help you find the right contractors for your construction needs. What type of service are you looking for?";
       } else {
         response =
-          "Gracias por tu mensaje. ¿Hay algo más en lo que pueda ayudarte?";
+          "Thank you for your message. Is there anything else I can help you with?";
       }
 
       addMessage(response, "assistant");
@@ -93,12 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // In a real app, you would upload the file to a server
       // Here we just show a message that the file was attached
       const fileName = file.name;
-      addMessage(`Imagen adjunta: ${fileName}`, "user");
+      addMessage(`Image attached: ${fileName}`, "user");
 
       // Simulate a response acknowledging the image
       setTimeout(() => {
         addMessage(
-          "He recibido tu imagen. ¿En qué puedo ayudarte con ella?",
+          "I've received your image. How can I help you with it?",
           "assistant"
         );
       }, 1000);
@@ -120,12 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // In a real app, you would upload the file to a server
       // Here we just show a message that the file was attached
       const fileName = file.name;
-      addMessage(`Archivo adjunto: ${fileName}`, "user");
+      addMessage(`File attached: ${fileName}`, "user");
 
       // Simulate a response acknowledging the file
       setTimeout(() => {
         addMessage(
-          "He recibido tu archivo. ¿Qué necesitas hacer con él?",
+          "I've received your file. What would you like to do with it?",
           "assistant"
         );
       }, 1000);
